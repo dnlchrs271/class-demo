@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  resources :tags
+  devise_for :users
+  ActiveAdmin.routes(self)
   resources :posts
+  
+  root 'post#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

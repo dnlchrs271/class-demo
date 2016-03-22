@@ -9,7 +9,14 @@
   <strong>Body:</strong>
   <%= @post.body %>
 </p>
-
+<% if @post.tags %>
+  <strong>Tags</strong>
+  <ul>
+  <% @post.tags.each do |tag| %>
+    <li><%= tag.title %></li>
+  <% end %>
+  </ul>
+<% end %>
 <p>
   <strong>Username:</strong>
   <%= @post.username %>
